@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#e91e63">
+  <title>Haryana Friends — Dosti, Respect aur Safety</title>
+  <style>
+    :root{--pink:#e91e63;--dark:#20213a;--muted:#687084;--light:#fff3f7}
+    *{box-sizing:border-box}
+    body{margin:0;font-family:Arial,Helvetica,sans-serif;color:var(--dark);background:#fff}
+    header{display:flex;justify-content:space-between;align-items:center;gap:16px;padding:16px max(5%,calc((100% - 1120px)/2));border-bottom:1px solid #f2e6eb;position:sticky;top:0;background:#ffffffed;backdrop-filter:blur(10px)}
+    .brand{font-size:22px;font-weight:800}.brand span{color:var(--pink)}
+    nav{display:flex;gap:20px;align-items:center}nav a{color:var(--dark);text-decoration:none;font-weight:600;font-size:14px}
+    .btn{display:inline-block;border:0;border-radius:999px;padding:12px 20px;background:var(--pink);color:#fff;text-decoration:none;font-weight:700;cursor:pointer}
+    .btn.alt{background:#fff;color:var(--pink);border:1px solid var(--pink)}
+    main{max-width:1120px;margin:auto;padding:34px 20px}
+    .hero{background:linear-gradient(120deg,#fff0f5,#f4f4ff);border-radius:26px;padding:46px 34px;display:grid;grid-template-columns:1.4fr 1fr;gap:24px;align-items:center}
+    .eyebrow{color:var(--pink);font-weight:800;letter-spacing:.5px}
+    h1{font-size:clamp(34px,5vw,54px);line-height:1.06;margin:12px 0}
+    p{line-height:1.65;color:var(--muted)}
+    .hero-panel{background:white;padding:24px;border-radius:20px;box-shadow:0 12px 35px #30203a12}
+    label{display:block;font-weight:700;font-size:13px;margin:12px 0 6px}
+    input,select{width:100%;padding:13px;border:1px solid #e4dce2;border-radius:10px;background:#fff;font-size:15px}
+    .features{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin:28px 0}
+    .feature,.profile{padding:20px;border:1px solid #f1e6eb;border-radius:18px;background:#fff}
+    .feature strong{display:block;margin:8px 0}
+    h2{font-size:27px;margin:36px 0 16px}
+    .profiles{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+    .avatar{height:90px;width:90px;border-radius:50%;display:grid;place-items:center;background:var(--light);color:var(--pink);font-size:30px;font-weight:800;margin-bottom:12px}
+    .profile small{color:var(--muted)}
+    .notice{margin-top:28px;padding:18px 20px;border-radius:14px;background:#f3f7ff;border-left:4px solid #5575d8}
+    footer{padding:26px 20px;text-align:center;background:var(--dark);color:#fff;margin-top:40px}
+    footer p{color:#d9d9e5;margin:8px}
+    @media(max-width:760px){header{padding:14px 18px}nav{gap:10px}nav a:not(:last-child){display:none}.hero{grid-template-columns:1fr;padding:30px 22px}.features,.profiles{grid-template-columns:1fr}main{padding:22px 16px}}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="brand">❤️ Haryana <span>Friends</span></div>
+    <nav aria-label="Main navigation">
+      <a href="#home">Home</a><a href="#features">Features</a><a href="#community">Community</a>
+      <a href="#safety">Safety</a><a class="btn" href="#join">Join the community</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div>
+        <div class="eyebrow">NAMASTE HARYANA!</div>
+        <h1>Naye dost banao.<br><span style="color:var(--pink)">Respect ke saath.</span></h1>
+        <p>Haryana Friends ek community website ka demo hai jahan log apne shehar aur interests ke hisaab se naye dost dhoondhne ka idea explore kar sakte hain.</p>
+        <a class="btn" href="#join">Get started</a>
+        <a class="btn alt" href="#features">Learn more</a>
+      </div>
+      <div class="hero-panel" id="join">
+        <h2 style="margin:0 0 6px">Community preview</h2>
+        <p style="margin-top:0">Yeh abhi sirf demo form hai — koi personal data save nahi hota.</p>
+        <form onsubmit="event.preventDefault(); alert('Yeh demo hai. Abhi account create nahi hota.');">
+          <label for="nickname">Display name</label>
+          <input id="nickname" placeholder="Apna display name" maxlength="24">
+          <label for="district">Your Haryana district</label>
+          <select id="district">
+            <option value="">District choose karein</option>
+            <option>Ambala</option><option>Bhiwani</option><option>Charkhi Dadri</option>
+            <option>Faridabad</option><option>Fatehabad</option><option>Gurugram</option>
+            <option>Hisar</option><option>Jhajjar</option><option>Jind</option>
+            <option>Kaithal</option><option>Karnal</option><option>Kurukshetra</option>
+            <option>Mahendragarh</option><option>Nuh</option><option>Palwal</option>
+            <option>Panchkula</option><option>Panipat</option><option>Rewari</option>
+            <option>Rohtak</option><option>Sirsa</option><option>Sonipat</option>
+            <option>Yamunanagar</option>
+          </select>
+          <button class="btn" style="width:100%;margin-top:16px" type="submit">Preview profile</button>
+        </form>
+      </div>
+    </section>
+
+    <section class="features" id="features">
+      <div class="feature"><div>🤝</div><strong>Find common interests</strong><p>Music, sports, studies aur hobbies ke through community explore karein.</p></div>
+      <div class="feature"><div>📍</div><strong>Haryana districts</strong><p>Apne district ke community updates aur activities dekhein.</p></div>
+      <div class="feature"><div>🛡️</div><strong>Safety first</strong><p>Respectful behaviour, report options aur privacy ko priority dein.</p></div>
+    </section>
+
+    <section id="community">
+      <h2>Community preview</h2>
+      <p>Yeh sample cards hain, real users nahi.</p>
+      <div class="profiles">
+        <article class="profile"><div class="avatar">A</div><strong>Community Member</strong><br><small>Karnal · Music</small></article>
+        <article class="profile"><div class="avatar">H</div><strong>Community Member</strong><br><small>Hisar · Sports</small></article>
+        <article class="profile"><div class="avatar">R</div><strong>Community Member</strong><br><small>Rohtak · Books</small></article>
+      </div>
+    </section>
+
+    <section class="notice" id="safety">
+      <strong>🔒 Safety reminder</strong>
+      <p style="margin-bottom:0">Yeh static demo hai: login, real profiles aur private chat abhi kaam nahi karte. Real launch se pehle secure authentication, adult moderation, report/block tools, privacy policy aur data protection ki zaroorat hogi. Kisi ko OTP, password, address ya personal photos share na karein; unknown logon se akele na milen.</p>
+    </section>
+  </main>
+
+  <footer>
+    <strong>Haryana Friends ❤️</strong>
+    <p>Dosti • Respect • Safety</p>
+    <small>© 2026 Haryana Friends — Demo website</small>
+  </footer>
+</body>
+</html>
