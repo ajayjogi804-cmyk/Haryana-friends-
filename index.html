@@ -104,88 +104,29 @@ or private photos with strangers.</p>
 <p>Dosti • Respect • Safety</p>
 <p>© 2026 Haryana Friends</p>
 </footer>
-
 <script type="module">
-import {initializeApp}
-from "https://www.gstatic.com/firebasejs/12.5.0/firebase-app.js";
+  // Import the functions you need from the SDKs you need
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/13.3.0/firebase-app.js";
+  import { getAnalytics } from "https://www.gstatic.com/firebasejs/13.3.0/firebase-analytics.js";
+  // TODO: Add SDKs for Firebase products that you want to use
+  // https://firebase.google.com/docs/web/setup#available-libraries
 
-import {
- getAuth,
- createUserWithEmailAndPassword,
- signInWithEmailAndPassword,
- signOut,
- onAuthStateChanged
-}
-from "https://www.gstatic.com/firebasejs/12.5.0/firebase-auth.js";
+  // Your web app's Firebase configuration
+  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+  const firebaseConfig = {
+    apiKey: "AIzaSyCb1IYaGUORhpQOAhT-43cBLPFeEFEIWDU",
+    authDomain: "haryana-friends.firebaseapp.com",
+    projectId: "haryana-friends",
+    storageBucket: "haryana-friends.firebasestorage.app",
+    messagingSenderId: "964778017946",
+    appId: "1:964778017946:web:acf986fdec8da324830b23",
+    measurementId: "G-Z79PESG5YP"
+  };
 
-// Your web app's Firebase configuration
-// For Firebase JS SDK v7.20.0 and later, measurementId is optional
-const firebaseConfig = {
-  apiKey: "AIzaSyCb1IYaGUORhpQOAhT-43cBLPFeEFEIWDU",
-  authDomain: "haryana-friends.firebaseapp.com",
-  projectId: "haryana-friends",
-  storageBucket: "haryana-friends.firebasestorage.app",
-  messagingSenderId: "964778017946",
-  appId: "1:964778017946:web:9cc01c14cefd9ded830b23",
-  measurementId: "G-CG7QHM66LE"
-};
-
-// Initialize Firebase
-const app = initializeApp(firebaseConfig);
-const auth = getAuth(app);
-
-const msg = document.getElementById("message");
-
-document.getElementById("signupBtn").onclick = async()=>{
- const name = document.getElementById("name").value.trim();
- const email = document.getElementById("email").value.trim();
- const password = document.getElementById("password").value;
-
- if(!name || !email || !password){
-  msg.textContent="Please fill all fields.";
-  return;
- }
-
- try{
-  const result = await createUserWithEmailAndPassword(
-   auth,email,password
-  );
-  msg.textContent="Account created successfully!";
- }catch(error){
-  msg.textContent=error.message;
- }
-};
-
-document.getElementById("loginBtn").onclick = async()=>{
- const email = document.getElementById("email").value.trim();
- const password = document.getElementById("password").value;
-
- try{
-  await signInWithEmailAndPassword(auth,email,password);
-  msg.textContent="Login successful!";
- }catch(error){
-  msg.textContent=error.message;
- }
-};
-
-document.getElementById("logoutBtn").onclick = async()=>{
- await signOut(auth);
-};
-
-onAuthStateChanged(auth,user=>{
- const authBox=document.getElementById("authBox");
- const profileBox=document.getElementById("profileBox");
-
- if(user){
-  authBox.classList.add("hidden");
-  profileBox.classList.remove("hidden");
-  document.getElementById("userEmail").textContent=user.email;
- }else{
-  authBox.classList.remove("hidden");
-  profileBox.classList.add("hidden");
- }
-});
-</script>
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+  const analytics = getAnalytics(app);
+</script> 
 
 </body>
 </html>
